@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PetShop.Application.Interfaces.Contexts;
 using PetShop.Domain.Entities.Users;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PetShop.Persistence.Context
 {
-    public class DataBaseContext : DbContext
+    public class DataBaseContext : DbContext, IDataBaseContext
     {
         public DataBaseContext(DbContextOptions options):base(options)
         {   
