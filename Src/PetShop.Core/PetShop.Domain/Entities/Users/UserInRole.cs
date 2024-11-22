@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace PetShop.Domain.Entities.Users
 {
-    public class Role
+    public class UserInRole
     {
         public long Id { get; set; }
-        public string Name { get; set; }
-
-        public ICollection<UserInRole> UserInRoles { get; set; }
+        public virtual User User { get; set; }
+        public long UserId { get; set; }
+        public virtual Role Role { get; set; }
+        public long RoleId { get; set; }
     }
 }
