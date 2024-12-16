@@ -1,5 +1,12 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.EntityFrameworkCore;
+using PetShop.Application.Interfaces.Contexts;
+using PetShop.Persistence.Contexts;
 
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<DatabaseContext>(option =>
+    option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
