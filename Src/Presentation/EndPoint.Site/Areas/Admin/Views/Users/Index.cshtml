@@ -1,8 +1,31 @@
-﻿
+﻿@using PetShop.Application.Services.Users.Queries.GetUsers
+@model ResultGetDto
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Index-admin area</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">FullName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.Users){
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.FullName</td>
+                <td>@item.Email</td>
+                <td>
+                    <button class="btn btn-primary">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 

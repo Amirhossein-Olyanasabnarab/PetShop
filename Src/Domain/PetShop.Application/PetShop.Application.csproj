@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\PetShop.Common\PetShop.Common.csproj" />
     <ProjectReference Include="..\PetShop.Domain\PetShop.Domain.csproj" />
   </ItemGroup>
 
